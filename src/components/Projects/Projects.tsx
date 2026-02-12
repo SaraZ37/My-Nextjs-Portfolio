@@ -12,11 +12,11 @@ const projectsData = [
   // مشاريع الأفلام والبودكاست والمحتوى والتسويق الأصلية
   { id: 1, title: "Seven hours in Syria", category: "Films", duration: "13 min", description: "A pregnant woman gives birth under siege in a destroyed church.", tags: ["Cine", "War", "documentary"], link: "https://www.youtube.com/watch?v=eGb8UOR4FCI" }, 
   { id: 2, title: "Story with Sarah", category: "Pod", duration: "Ongoing", description: "Because we are made of stories.", tags: ["Pod", "story telling", "youtube"], link: "https://www.youtube.com/@SarahAlZeer/podcasts" },
-  { id: 3, title: "Digital Strategy for RedRose Clinic", category: "Marketing", duration: "6 months", description: "Full social media and Google Ads setup .", tags: ["SEO", "Google Ads", "Strategy"], link: "#" },
+
   { id: 5, title: "Content Creation Series", category: "Content", duration: "Ongoing", description: "Nostalgia for Syrian TV series on Instagram.", tags: ["Nostalgia", "Syrian series", "Content"], link: "https://www.instagram.com/sarah_a_alzeer/" },
   { id: 6, title: "Dharma - Film", category: "Films", duration: "Short Film", description: "A dramatic short film exploring pet.", tags: ["Short Film", "Director", "docu"], link: "#" },
   { id: 7, title: "Podcast Shabablik with Miral", category: "Pod", duration: "In Production", description: "A painful experiences and overcoming them.", tags: ["Interviews", "Social"], link: "https://www.youtube.com/@Shabablikwithmiral" },
-  { id: 8, title: "Branding for Framtalent company", category: "Marketing", duration: "6 month", description: "Complete visual identity and logo design package.", tags: ["Branding", "Design", "Logo"], link: "" },
+  { id: 8, title: "Branding for Framtalent company", category: "Marketing", duration: "3 month", description: "Content for Instagram & Tiktok", tags: ["Branding", "Reels", "Social Media"], link: "" },
   { id: 9, title: "Ward Ahmar", category: "Series", duration: "4 episods", description: "A romance series production.", tags: ["Series", "Drama"], link: "https://www.youtube.com/watch?v=oCTd8DsTFW8" },
 { id: 10, title: "Arabizi", category: "Series", duration: "23 episods", description: "A comedy series production.", tags: ["Series", "Comedy"], link: 
   "https://www.youtube.com/watch?v=z7C9s90uMx4&list=PLFt8cx1Uc9IG-fB26GuhzIwn9M37GcDlr" },

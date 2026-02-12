@@ -6,163 +6,141 @@ import React, { useState, useMemo } from 'react';
 // Deep Charcoal: #1E1E1E
 // Light Taupe (Warm Background): #F3F2EE
 
-// Service and Package Definitions
 const servicesData = [
   {
     id: 'reels',
     name: 'Reels Filming & Production',
-    description: 'Production of engaging short-form video content tailored for Instagram and TikTok.',
+    description: 'Cinematic short-form content designed for high engagement on Instagram and TikTok.',
     packages: [
-      { name: 'Basic Package', price: 'Starting from $450', features: ['2 Reels per month', 'High Definition Filming (FHD)', 'Standard Editing', '1 Review Round'] },
-      { name: 'Advanced Package', price: 'Starting from $900', features: ['6 Reels per month', 'Professional Cinematic Filming', 'Advanced Editing & Color Grading', 'Creative Scripting', '2 Review Rounds'] },
+      { name: 'Standard Production', tier: 'Essential Impact', features: ['Ideal for consistent social presence', 'High Definition Filming (FHD)', 'Professional Editing', 'Trend Analysis'] },
+      { name: 'Premium Cinematic', tier: 'High-End Storytelling', features: ['4K Cinematic Production', 'Advanced Color Grading', 'Creative Scripting & Direction', 'Sound Design & Licensed Music'] },
     ],
   },
   {
     id: 'social',
     name: 'Social Media Management',
-    description: 'Comprehensive account management to boost engagement and build your brand.',
+    description: 'Strategic account growth and community management to elevate your brand voice.',
     packages: [
-      { name: 'Starter Package', price: 'Starting from $600', features: ['1 Platform Managed', '4 Posts per month', 'Basic Comment Response', 'Simple Monthly Report'] },
-      { name: 'Professional Package', price: 'Starting from $1500', features: ['2 Platforms Managed', '10 Posts per month', 'Comprehensive Audience Engagement (24/7)', 'Strategic Planning & Advertising', 'Detailed Monthly Report'] },
+      { name: 'Growth Starter', tier: 'Foundation Build', features: ['Core Platform Management', 'Strategic Content Calendar', 'Community Engagement', 'Monthly Performance Insights'] },
+      { name: 'Brand Authority', tier: 'Full Ecosystem', features: ['Multi-platform Strategy', 'Advanced Audience Growth', 'Ad Campaign Integration', 'Comprehensive Strategy Consulting'] },
     ],
   },
   {
     id: 'googleAds',
     name: 'Google Ads Management',
-    description: 'Optimizing your advertising campaigns for maximum Return on Investment (ROI).',
+    description: 'Results-driven advertising focused on maximizing ROI and conversion rates.',
     packages: [
-      { name: 'Beginner Tier', price: '15% Service Fee', features: ['Campaign Setup', 'Budget Management up to $1000', 'Keyword Optimization', 'Weekly Report'] },
-      { name: 'Growth Tier', price: '10% Service Fee', features: ['Unlimited Budget Management', 'Comprehensive Conversion Optimization', 'Retargeting Ads', 'In-depth Monthly Consultation'] },
+      { name: 'Strategic Setup', tier: 'Launch Ready', features: ['Targeted Campaign Architecture', 'Keyword Research', 'Conversion Tracking Setup', 'Performance Monitoring'] },
+      { name: 'Market Dominance', tier: 'Scalable Growth', features: ['Full Funnel Optimization', 'A/B Testing & Retargeting', 'Competitor Analysis', 'Dedicated Strategy Consultant'] },
     ],
   },
   {
     id: 'dataAnalysis',
     name: 'Data Analysis & Insight',
-    description: 'Transforming complex data into actionable business decisions.',
+    description: 'Deep-dive analytics to turn complex metrics into clear business strategies.',
     packages: [
-      { name: 'Essential Analysis', price: 'Starting from $300', features: ['Social Media Performance Review', 'Target Audience Identification', 'Key Performance Indicators (KPIs)', 'Results Presentation'] },
-      { name: 'In-depth Analysis', price: 'Starting from $750', features: ['Ad Performance Analysis (ROI)', 'User Journey Tracking', 'Actionable Strategic Recommendations', 'Custom Dashboard'] },
+      { name: 'Performance Audit', tier: 'Insight Focused', features: ['Social & Web Health Check', 'KPI Identification', 'Target Audience Mapping', 'Strategic Review'] },
+      { name: 'Strategic Intelligence', tier: 'Data Driven Growth', features: ['Full User Journey Tracking', 'ROI & Attribution Modeling', 'Custom Real-time Dashboards', 'Quarterly Strategy Planning'] },
     ],
   },
-{    id: 'WebDevelopment',
+  {
+    id: 'WebDevelopment',
     name: 'Web Development & Design',
-    description: 'Creating stunning, user-friendly websites that drive engagement and conversions.',
+    description: 'Custom digital experiences focused on performance, aesthetics, and user conversion.',
     packages: [
-      { name: 'Basic Website', price: 'Starting from $800', features: [  'Basic SEO Optimization', 'Contact Form Integration'] },
-      { name: 'Advanced Website', price: 'Starting from $2000', features: [  'E-commerce Functionality', 'Advanced SEO Strategies'] },
-
+      { name: 'Professional Presence', tier: 'Clean & Responsive', features: ['Custom UI/UX Design', 'SEO Optimized Architecture', 'Seamless Mobile Experience', 'High-Speed Performance'] },
+      { name: 'E-Commerce & Scale', tier: 'Complete Digital Store', features: ['Advanced Sales Integration', 'Dynamic Content Management', 'Premium SEO Strategy', 'Ongoing Technical Support'] },
     ],
-}
+  }
 ];
 
 const ServicesPage: React.FC = () => {
-  // State to store the selected service (default is the first service)
   const [selectedServiceId, setSelectedServiceId] = useState(servicesData[0].id);
 
-  // Memoized active service data
   const activeService = useMemo(() => {
     return servicesData.find(service => service.id === selectedServiceId) || servicesData[0];
   }, [selectedServiceId]);
 
   return (
-    // Background: warm light color (#F3F2EE) with luxurious contrast
-    <div className="min-h-screen bg-[#F3F2EE] py-20 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-[#F3F2EE] py-20 px-4 sm:px-6 lg:px-8 font-sans">
       <div className="max-w-7xl mx-auto">
 
-        {/* Main Title and Description */}
         <header className="text-center mb-16">
           <h1 className="text-5xl font-serif font-light text-[#1E1E1E] mb-4">
-            Our <span className="text-[#B87333]">Professional Services</span> & Packages
+            Our <span className="text-[#B87333]">Creative Solutions</span>
           </h1>
-          <p className="text-xl text-gray-700 max-w-3xl mx-auto font-light">
-            We offer a blend of visual creativity and precise analysis to ensure your goals are met. Choose the service that suits your project:
+          <p className="text-xl text-gray-700 max-w-2xl mx-auto font-light leading-relaxed">
+            Elevating your digital presence through professional production, strategic design, and data-driven insights. 
           </p>
         </header>
 
-        {/* 1. Service Selection Dropdown */}
-        <div className="flex justify-center mb-12">
+        <div className="flex justify-center mb-16">
           <select
             value={selectedServiceId}
             onChange={(e) => setSelectedServiceId(e.target.value)}
-            className="p-3 border-2 border-[#B87333] text-[#1E1E1E] bg-white rounded-lg shadow-lg 
-                       focus:ring-[#B87333] focus:border-[#B87333] text-lg cursor-pointer transition duration-300 w-full sm:w-80 text-left"
-                       
-            // Removed style={{ direction: 'rtl' }}
+            className="p-4 border-b-2 border-[#B87333] text-[#1E1E1E] bg-transparent font-medium text-xl focus:outline-none cursor-pointer w-full sm:w-96"
           >
             {servicesData.map((service) => (
-              <option key={service.id} value={service.id}>
+              <option key={service.id} value={service.id} className="bg-white">
                 {service.name}
               </option>
             ))}
           </select>
         </div>
 
-        {/* 2. Active Service Details */}
-        <div className="bg-white p-8 rounded-xl shadow-2xl mb-12 text-center">
-            <h2 className="text-3xl font-bold text-[#1E1E1E] mb-2 border-b-2 border-[#B87333]/50 inline-block pb-1">
-                {activeService.name}
-            </h2>
-            <p className="text-lg text-gray-600 mb-6">
-                {activeService.description}
-            </p>
+        <div className="bg-white/50 backdrop-blur-sm p-8 lg:p-12 rounded-2xl shadow-sm border border-white mb-12">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-serif text-[#1E1E1E] mb-4 uppercase tracking-widest">
+                  {activeService.name}
+              </h2>
+              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                  {activeService.description}
+              </p>
+            </div>
             
-            {/* 3. Pricing Tiers */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
-                
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
                 {activeService.packages.map((pkg, index) => (
                     <div 
                         key={index}
-                        // Background contrast between white and light taupe (#F3F2EE)
-                        className={`p-6 rounded-xl shadow-xl transition duration-300 transform 
-                                    ${index === 1 ? 'bg-white scale-[1.03] border-4 border-[#B87333]' : 'bg-[#F3F2EE]'} 
-                                    hover:shadow-2xl hover:scale-[1.05]`}
+                        className={`relative p-8 rounded-2xl transition duration-500 flex flex-col
+                                    ${index === 1 ? 'bg-[#1E1E1E] text-white shadow-2xl' : 'bg-white border border-gray-200'}`}
                     >
-                        {/* Package Name */}
-                        <h3 className={`text-2xl font-extrabold ${index === 1 ? 'text-[#B87333]' : 'text-[#1E1E1E]'} mb-4`}>
-                            {pkg.name}
-                        </h3>
-                        
-                        {/* Price */}
-                        <p className={`text-4xl font-bold ${index === 1 ? 'text-[#B87333]' : 'text-[#1E1E1E]'} mb-6`}>
-                            {pkg.price}
-                        </p>
+                        <div className="mb-6">
+                          <span className={`text-xs uppercase tracking-[0.2em] font-bold ${index === 1 ? 'text-[#B87333]' : 'text-gray-400'}`}>
+                            {pkg.tier}
+                          </span>
+                          <h3 className="text-2xl font-serif mt-2">
+                              {pkg.name}
+                          </h3>
+                        </div>
 
-                        {/* Feature List */}
-                        <ul className="space-y-3 mb-8">
+                        <ul className="space-y-4 mb-10 flex-grow">
                             {pkg.features.map((feature, fIndex) => (
-                                <li key={fIndex} className="flex items-start text-gray-700">
-                                    {/* Copper Icon */}
-                                    <svg 
-                                        className="flex-shrink-0 w-5 h-5 mt-1 mr-2" 
-                                        fill="none" 
-                                        stroke="#B87333" 
-                                        viewBox="0 0 24 24" 
-                                        xmlns="http://www.w3.org/2000/svg"
-                                    >
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
-                                    </svg>
-                                    <span className='font-light'>{feature}</span>
+                                <li key={fIndex} className="flex items-center text-sm">
+                                    <span className={`mr-3 h-1.5 w-1.5 rounded-full ${index === 1 ? 'bg-[#B87333]' : 'bg-[#B87333]'}`}></span>
+                                    <span className={index === 1 ? 'text-gray-300' : 'text-gray-600'}>{feature}</span>
                                 </li>
                             ))}
                         </ul>
 
-                        {/* Booking Button - Changed to reflect appointment scheduling */}
                         <a
                             href="#contact"
-                            className={`block w-full text-center px-6 py-3 rounded-lg text-lg font-semibold tracking-wider transition duration-300
+                            className={`block w-full text-center py-4 rounded-full text-sm font-bold uppercase tracking-widest transition duration-300
                                        ${index === 1 
-                                         ? 'bg-[#B87333] text-white hover:bg-[#1E1E1E]' // Advanced Package: Copper prominent
-                                         : 'bg-[#1E1E1E] text-white hover:bg-[#B87333]' // Basic Package: Charcoal prominent
+                                         ? 'bg-[#B87333] text-white hover:bg-white hover:text-[#1E1E1E]' 
+                                         : 'border border-[#1E1E1E] text-[#1E1E1E] hover:bg-[#1E1E1E] hover:text-white' 
                                        }`}
                         >
-                            Schedule a Consultation
+                            Request a Custom Quote
                         </a>
                     </div>
                 ))}
             </div>
-
         </div>
 
+        <footer className="text-center text-gray-500 text-sm italic">
+          * All projects are uniquely scoped. Contact us for a personalized proposal tailored to your vision.
+        </footer>
       </div>
     </div>
   );

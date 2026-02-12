@@ -83,31 +83,64 @@ export default function Home() {
         </div>
       </div>
 
-      {/* 3. قسم معلومات الاتصال/موقع بديل للـ CTA */}
-      <div id="contact" className="py-20 px-6 lg:px-12 bg-[#F3F2EE]">
-          <div className="max-w-3xl mx-auto text-center">
-              <h2 className="text-3xl font-bold text-[#1E1E1E] mb-4">
-                  Ready to Collaborate?
-              </h2>
-              <p className="text-lg text-gray-700 mb-6">
-                  Whether you need film direction, a custom digital strategy, or lyrics for your next track, let us discuss your vision.
-              </p>
-              
-              <p className="text-xl text-[#B87333] font-semibold mb-6">
-                  saranet87@hotmail.com
-              </p>
-              
-              {/* زر ثانوي للاتصال (Copper Outline) */}
-              
-              <a
-                href="mailto:saranet87@hotmail.com"
-                className="inline-block border-2 border-[#B87333] text-[#B87333] px-8 py-3 rounded-lg text-md font-semibold hover:bg-[#B87333] hover:text-white transition duration-300 uppercase tracking-wider"
-              >
-                Send a Direct Message
-              </a>
+     {/* 3. قسم التواصل الآمن (بدلاً من إظهار الإيميل) */}
+<div id="contact" className="py-24 px-6 lg:px-12 bg-[#F3F2EE] border-t border-gray-200">
+    <div className="max-w-3xl mx-auto text-center">
+        <h2 className="text-4xl font-serif font-light text-[#1E1E1E] mb-4 uppercase tracking-widest">
+            Ready to <span className="text-[#B87333]">Collaborate</span>?
+        </h2>
+        <p className="text-lg text-gray-700 mb-12 font-light">
+            Whether you need film direction, a custom digital strategy, or creative consulting, let us discuss your vision.
+        </p>
+        
+        {/* نموذج الاتصال - يرسل الرسائل لإيميلك دون كشفه */}
+        <form 
+          action="https://formspree.io/f/YOUR_ID_HERE" 
+          method="POST" 
+          className="text-left space-y-6 bg-white p-8 rounded-2xl shadow-sm border border-gray-100"
+        >
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="flex flex-col">
+              <label className="text-[10px] uppercase tracking-[0.2em] font-bold text-[#B87333] mb-2">Name</label>
+              <input 
+                type="text" name="name" required 
+                className="border-b border-gray-300 py-2 focus:border-[#B87333] outline-none transition-colors bg-transparent text-sm"
+              />
+            </div>
+            <div className="flex flex-col">
+              <label className="text-[10px] uppercase tracking-[0.2em] font-bold text-[#B87333] mb-2">Email Address</label>
+              <input 
+                type="email" name="email" required 
+                className="border-b border-gray-300 py-2 focus:border-[#B87333] outline-none transition-colors bg-transparent text-sm"
+              />
+            </div>
           </div>
-      </div>
+          
+          <div className="flex flex-col">
+            <label className="text-[10px] uppercase tracking-[0.2em] font-bold text-[#B87333] mb-2">Project Vision</label>
+            <textarea 
+              name="message" rows={4} required 
+              className="border-b border-gray-300 py-2 focus:border-[#B87333] outline-none transition-colors bg-transparent text-sm resize-none"
+              placeholder="Tell us a bit about your project..."
+            ></textarea>
+          </div>
 
+          <div className="text-center pt-4">
+            <button 
+              type="submit"
+              className="inline-block border-2 border-[#B87333] text-[#B87333] px-12 py-3 rounded-full text-xs font-bold hover:bg-[#B87333] hover:text-white transition duration-300 uppercase tracking-[0.3em]"
+            >
+              Send Message
+            </button>
+          </div>
+        </form>
+
+        {/* تذييل فني بسيط */}
+        <p className="mt-12 text-[10px] text-gray-400 uppercase tracking-[0.4em]">
+            SaraCrew Production 
+        </p>
+    </div>
+</div>
     </main>
   );
 }
