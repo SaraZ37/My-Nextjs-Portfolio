@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 // === إعدادات الـ SEO المحدثة لنطاق saracrew.com ===
 export const metadata: Metadata = {
   // العنوان الاحترافي الذي سيظهر في جوجل
-  title: "Sara Crew | Filmmaker & Director",
+  title: "Sara Crew | Filmmaker ",
   
   // الوصف الأساسي (Filmmaker) مع التركيز على الخبرة
   description: "Official portfolio of Sara Crew. Professional Filmmaker and Director specializing in documentary storytelling, film production, and visual arts.",
