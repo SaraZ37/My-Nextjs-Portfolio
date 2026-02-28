@@ -10,50 +10,49 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-// === إعدادات الـ SEO المحدثة لنطاق saracrew.com ===
+// === النسخة النهائية: Filmmaker فقط بدون Director ===
 export const metadata: Metadata = {
-  // العنوان الاحترافي الذي سيظهر في جوجل
-  title: "Sara Crew | Filmmaker ",
+  // 1. العنوان الرئيسي
+  title: "Sara Crew | Filmmaker",
   
-  // الوصف الأساسي (Filmmaker) مع التركيز على الخبرة
-  description: "Official portfolio of Sara Crew. Professional Filmmaker and Director specializing in documentary storytelling, film production, and visual arts.",
+  // 2. الوصف (تم حذف Director)
+  description: "Official portfolio of Sara Crew. Professional Filmmaker specializing in documentary storytelling, film production, and visual arts.",
   
-  // كلمات مفتاحية قوية جداً لجلب الزوار المهتمين بصناعة الأفلام
+  // 3. الكلمات المفتاحية (تم تنظيفها)
   keywords: [
     "Sara Crew", 
+    "Filmmaker",
     "Filmmaker Sweden", 
-    "Film Director", 
     "Documentary Filmmaker", 
     "Sara Al-Zeer", 
-    "Female Director", 
     "Film Production", 
     "Visual Storytelling", 
     "Cinema Portfolio"
   ],
 
-  // إعدادات الـ Open Graph (التي تظهر في واتساب وسوشيال ميديا)
+  // 4. إعدادات التواصل الاجتماعي (تم حذف Director)
   openGraph: {
     title: "Sara Crew | Filmmaker Portfolio",
-    description: "Explore the cinematic world of Sara Crew. Award-winning films and professional directing.",
-    url: "https://www.saracrew.com", // الرابط الجديد الخاص بكِ
+    description: "Explore the cinematic world of Sara Crew. Professional filmmaking and visual storytelling.",
+    url: "https://www.saracrew.com",
     siteName: "Sara Crew",
     locale: "en_US",
     type: "website",
     images: [
       {
-        url: "/logo/IMAGE.jpg", // تأكدي من وضع شعار شركتك بهذا الاسم في مجلد public
+        url: "/logo/IMAGE.jpg", 
         width: 1200,
         height: 630,
-        alt: "Sara Crew Logo",
+        alt: "Sara Crew Filmmaker",
       },
     ],
   },
 
-  // إعدادات تويتر / X
+  // 5. تويتر (تم حذف Director)
   twitter: {
     card: "summary_large_image",
     title: "Sara Crew | Filmmaker",
-    description: "Professional portfolio of Film Director Sara Crew.",
+    description: "Professional filmmaking portfolio of Sara Crew.",
     images: ["/logo/IMAGE.jpg"],
   },
 };
@@ -70,19 +69,15 @@ export default function RootLayout({
         <Navbar/>
       
         <div className="flex w-full flex-grow"> 
-          
-          {/* الشريط الجانبي */}
           <aside className="w-72 bg-white shadow-xl border-r border-gray-100 hidden lg:block sticky top-0 h-screen overflow-y-auto">
             <Sidebar/>
           </aside>
           
-          {/* محتوى الصفحة */}
           <main className="flex-grow py-8 px-6 lg:px-10"> 
             <div className="container mx-auto">
               {children} 
             </div>
           </main>
-          
         </div> 
         
         <Footer/>
