@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useMemo } from 'react';
 
-// === بيانات المشاريع (نفس البيانات الأصلية) ===
+// === بيانات المشاريع ===
 const projectsData = [
   { id: 1, title: "Seven hours in Syria", category: "Films", duration: "13 min", description: "A pregnant woman gives birth under siege in a destroyed church.", tags: ["Cine", "War", "documentary"], link: "https://www.youtube.com/watch?v=eGb8UOR4FCI" }, 
   { id: 2, title: "Story with Sarah", category: "Pod", duration: "Ongoing", description: "Because we are made of stories.", tags: ["Pod", "story telling", "youtube"], link: "https://www.youtube.com/@SarahAlZeer/podcasts" },
@@ -32,10 +32,10 @@ export default function Projects() {
         
         {/* Header Section */}
         <div className="text-center mb-16">
-          <h1 className="text-6xl font-serif font-light text-white mb-4 tracking-tight border-b-2 border-[#B87333] inline-block px-8 pb-3">
+          <h1 className="text-5xl md:text-6xl font-serif font-light text-white mb-4 tracking-tight border-b-2 border-[#B87333] inline-block px-8 pb-3">
              Curated Portfolio
           </h1>
-          <p className="text-xl text-white max-w-4xl mx-auto mt-4 font-light">
+          <p className="text-xl text-white max-w-4xl mx-auto mt-4 font-light opacity-90">
             My work is categorized across Production, Design, and Digital Strategy.
           </p>
         </div>
@@ -45,8 +45,8 @@ export default function Projects() {
           <select
             value={activeCategory}
             onChange={(e) => setActiveCategory(e.target.value)}
-            className="p-3 border-2 border-[#B87333] text-[#1E1E1E] bg-white rounded-lg shadow-lg 
-                       focus:ring-[#B87333] focus:border-[#B87333] text-lg cursor-pointer transition duration-300 w-full sm:w-80"
+            className="p-3 border-2 border-[#B87333] text-[#1E1E1E] bg-white rounded-lg shadow-md 
+                       focus:ring-2 focus:ring-[#B87333] focus:outline-none text-lg cursor-pointer w-full sm:w-80"
           >
             {categories.map((category) => (
               <option key={category} value={category}>
@@ -63,21 +63,20 @@ export default function Projects() {
               <div 
                 key={project.id} 
                 className="bg-zinc-50 rounded-lg p-0 overflow-hidden border-2 border-transparent 
-                           transition-all duration-300 ease-in-out
-                           hover:shadow-xl hover:border-[#B87333] 
+                           transition-[border-color] duration-200 ease-in-out
+                           hover:border-[#B87333] 
                            flex flex-col justify-between 
-                           transform-gpu" // يجبر الكروم على استخدام كرت الشاشة
+                           contain-content shadow-sm"
                 style={{ 
-                  backfaceVisibility: 'hidden', 
-                  WebkitFontSmoothing: 'antialiased',
-                  willChange: 'transform, box-shadow' // تحضير المتصفح للحركة
+                  transform: 'translateZ(0)', // Force GPU acceleration
+                  willChange: 'border-color' // Optimize for Chrome
                 }}
               >
                 <div className="p-6 flex flex-col h-full">
-                  <span className="text-xs font-medium text-[#B87333] mb-2 uppercase tracking-widest block">
+                  <span className="text-[10px] font-bold text-[#B87333] mb-2 uppercase tracking-[0.2em] block">
                     {project.category}
                   </span>
-                  <h2 className="text-xl font-bold text-[#1E1E1E] mb-3 leading-tight">
+                  <h2 className="text-xl font-bold text-[#1E1E1E] mb-3 leading-snug">
                     {project.title}
                   </h2>
                   
@@ -85,19 +84,19 @@ export default function Projects() {
                     {project.description}
                   </p>
 
-                   <div className="flex flex-wrap gap-1 mb-4 pt-2 border-t border-[#A0A0A0]/20">
+                   <div className="flex flex-wrap gap-1 mb-4 pt-2 border-t border-gray-200">
                       {project.tags.map((tag, index) => (
                         <span 
                           key={index}
-                          className="text-[10px] uppercase font-semibold bg-[#F3F2EE] text-[#1E1E1E] px-2 py-0.5 rounded"
+                          className="text-[9px] uppercase font-bold bg-[#F3F2EE] text-[#1E1E1E] px-2 py-1 rounded-sm"
                         >
                           {tag}
                         </span>
                       ))}
                     </div>
                     
-                    <p className="text-xs text-gray-500 mt-auto font-medium">
-                        DURATION: {project.duration}
+                    <p className="text-[10px] text-gray-400 mt-auto font-bold tracking-wider">
+                        DURATION: {project.duration.toUpperCase()}
                     </p>
                 </div>
 
@@ -105,8 +104,8 @@ export default function Projects() {
                   href={project.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="block w-full text-center bg-[#B87333] text-white px-4 py-3 font-semibold 
-                             hover:bg-[#1E1E1E] transition-colors duration-300 tracking-wider text-sm"
+                  className="block w-full text-center bg-[#B87333] text-white px-4 py-3 font-bold 
+                             hover:bg-[#1E1E1E] transition-colors duration-200 tracking-[0.1em] text-xs"
                 >
                   VIEW PROJECT 
                 </a>
@@ -116,7 +115,7 @@ export default function Projects() {
         ) : (
           <div className="text-center py-20">
             <p className="text-xl text-white/50">
-              No projects found in the <span className="text-white">&quot;{activeCategory}&quot;</span> category.
+              No projects found.
             </p>
           </div>
         )}
