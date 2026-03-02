@@ -95,7 +95,7 @@ export default function Home() {
         
         {/* نموذج الاتصال - يرسل الرسائل لإيميلك دون كشفه */}
         <form 
-          action="https://formspree.io/f/YOUR_ID_HERE" 
+          action="https://formspree.io/f/mreavwao" 
           method="POST" 
           className="text-left space-y-6 bg-white p-8 rounded-2xl shadow-sm border border-gray-100"
         >
