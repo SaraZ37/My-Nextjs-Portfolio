@@ -10,7 +10,7 @@ export default function ThankYou() {
         <div className="mb-10 flex justify-center">
           <div className="w-28 h-28 flex items-center justify-center rounded-full border-4 border-[#B87333] overflow-hidden p-3 shadow-md bg-[#1E1E1E]">
             <Image 
-              src="/images/saracrew-logo.png" // تأكدي من المسار الصحيح للوجو في مجلد public
+              src="/logo/IMAGE.jpg" // تأكدي من المسار الصحيح للوجو في مجلد public
               alt="SaraCrew Production & Digital Marketing" 
               width={100} 
               height={100} 
