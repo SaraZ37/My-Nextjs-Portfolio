@@ -80,7 +80,7 @@ export default function Home() {
             className="text-left space-y-6 bg-white p-8 rounded-2xl shadow-sm border border-gray-100"
           >
             {/* التعديل الجديد: تحويل المستخدم لصفحة الشكر بعد الإرسال */}
-            <input type="hidden" name="_next" value="https://saracrew.com/thanks" />
+            <input type="hidden" name="_next" value="https://saracrew.com/Thanks" />
             {/* لضمان عدم ظهور صفحة كابتشا المزعجة من فورم سبري (اختياري) */}
             <input type="hidden" name="_subject" value="New Message from SaraCrew Portfolio" />
 
